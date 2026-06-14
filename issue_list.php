@@ -98,7 +98,8 @@ function markImp(id)
 				if (xmlhttp.readyState==4 && xmlhttp.status==200)
 				{
 				//document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-				eval(xmlhttp.responseText);
+				// SECURITY: eval() removed — XSS vector. Response inserted as HTML only.
+				var mode = (xmlhttp.responseText.indexOf("mode='Y'") !== -1) ? "Y" : "N";
 					if(mode=="Y")
 					{
 					document.getElementById(id).src = "images/star_red.gif";

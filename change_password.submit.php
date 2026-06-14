@@ -1,7 +1,9 @@
 <?php
 include("dbconnect.php");
 
-		 $sql =	"Update login set Password=[DB_PASSWORD]". md5($_POST['new_pass']) ."'  where ID=". $_SESSION['UID'] ;
+		 $new_pass_hash = md5($_POST['new_pass']);
+		 $uid = (int)$_SESSION['UID'];
+		 $sql = "Update login set Password='" . mysql_real_escape_string($new_pass_hash) . "' where ID=" . $uid;
 		//echo $sql;  
 		$rs = mysql_query($sql);
 		if($rs)
