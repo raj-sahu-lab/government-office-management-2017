@@ -1,5 +1,9 @@
 # Government Office Management — ERP System
 
+> **Built:** 2015 · PHP 5 · MySQL · Apache
+>
+> This project was built in 2015 as a production ERP for a state government office. PHP 5 with `mysql_*` functions was the standard stack for small-team government IT in India at the time; PDO and framework-based development were not yet common outside large organisations. The codebase has since been updated (June 2026) with a mysqli compatibility layer, bcrypt password hashing (with transparent migration from legacy MD5), XSS fixes, and proper header/redirect handling.
+
 A PHP-based workflow management system for government offices, handling ward/village administration, contact management, visit tracking, and approval workflows.
 
 > **Note:** This is a 2015 portfolio codebase written in PHP 5.x. It uses the `mysql_*` extension (superseded by PDO in PHP 7) and MD5 password hashing — both reflective of the era. The SQL queries and password handling would be migrated to PDO with prepared statements and `password_hash()` before any production deployment today.
