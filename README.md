@@ -54,3 +54,7 @@ A PHP-based workflow management system for government offices, handling ward/vil
 ## Note
 
 Built for a real government office to manage field operations across multiple wards and villages. Handles the administrative workflow of tracking contacts, scheduling visits, and recording outcomes across geographic regions.
+
+---
+
+© 2015 Raj Sahu
