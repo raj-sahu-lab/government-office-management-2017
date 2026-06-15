@@ -1,5 +1,9 @@
 <?php
 		include("dbconnect.php");
+		if (!isset($_SESSION['LoginID']) || empty($_SESSION['LoginID'])) {
+		    header('Location: Login.php');
+		    exit;
+		}
 		include("./include/base_library.php");
 
 		$objBaseLib = new BaseLibrary($con);

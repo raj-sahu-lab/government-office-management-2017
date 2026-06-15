@@ -1,6 +1,6 @@
 <?php
 include("dbconnect.php");
-$id=$_GET["id"];
+$id=(int)$_GET["id"];
 
 if(isset($_GET["vid"]))
 {

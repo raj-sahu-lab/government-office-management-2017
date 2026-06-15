@@ -1,5 +1,9 @@
 <?php
 include("dbconnect.php");
+if (!isset($_SESSION['LoginID']) || empty($_SESSION['LoginID'])) {
+    header('Location: Login.php');
+    exit;
+}
 
 if(isset($_REQUEST["letter_id"]) && $_REQUEST["letter_id"] !="")
 {

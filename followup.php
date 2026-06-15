@@ -350,7 +350,7 @@ mysql_query("SET CHARACTER SET 'utf8'", $con);
 					    }
 						?>
 						</select>
-                        <input type="hidden" name="issue_id" value="<?php echo $_REQUEST['id']; ?>">                        </td>
+                        <input type="hidden" name="issue_id" value="<?php echo htmlspecialchars($_REQUEST['id'], ENT_QUOTES, 'UTF-8'); ?>">                        </td>
 					</tr>
 					<!--tr>
 						<td width="292" align="right" valign="top"><span lang="en-us">Next Step / Remarks : </span></td>

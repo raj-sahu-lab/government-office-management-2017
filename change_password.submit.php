@@ -1,5 +1,9 @@
 <?php
 include("dbconnect.php");
+if (!isset($_SESSION['LoginID']) || empty($_SESSION['LoginID'])) {
+    header('Location: Login.php');
+    exit;
+}
 
 		 $new_pass_hash = mysql_real_escape_string(password_hash($_POST['new_pass'], PASSWORD_BCRYPT));
 		 $uid = (int)$_SESSION['UID'];

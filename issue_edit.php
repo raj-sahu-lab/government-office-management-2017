@@ -14,8 +14,8 @@ if(isset($_SESSION['LoginID']) && $_SESSION['LoginID']!="")
 	 exit;
 	}
 
-	$pid = $_GET["id"];
-	$sql=" select * from letter_master where id=" . $_GET["id"];
+	$pid = (int)$_GET["id"];
+	$sql=" select * from letter_master where id=" . $pid;
 	$rs1 = mysql_query($sql);
 	$row1 = mysql_fetch_row($rs1);
 
@@ -450,8 +450,8 @@ alert(document.frmApplication.visit_date.value);
                       <input type="hidden" id="dispatch_date" name="dispatch_date" value="" />                      </td>
                       <td align="right">जावक क्रमाकं : </td>
                       <td><input type="text" name="dispatch_no" size="30"  value="<?php echo $row1[18]; ?>"  style="height: 21">
-                      <input type="hidden" name="letter_id" value="<?php echo $_REQUEST["id"] ;?>">
-                      <input type="hidden" name="action" value="<?php echo $_REQUEST["action"] ;?>">
+                      <input type="hidden" name="letter_id" value="<?php echo htmlspecialchars($_REQUEST["id"], ENT_QUOTES, 'UTF-8'); ?>">
+                      <input type="hidden" name="action" value="<?php echo htmlspecialchars($_REQUEST["action"], ENT_QUOTES, 'UTF-8'); ?>">
                        </td>
 				  </tr>
 				  </tr>

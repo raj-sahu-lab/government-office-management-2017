@@ -612,7 +612,7 @@ alert(document.frmApplication.visit_date.value);
 	</tr>
 
 <?php
-	if(!$rs) die(mysql_error());
+	if(!$rs) die("A database error occurred. Please try again.");
 		$i=1;
 
 		while($row = mysql_fetch_array($rs))

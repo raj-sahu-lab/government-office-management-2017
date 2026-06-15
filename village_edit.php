@@ -354,7 +354,7 @@ alert(document.frmWard.visit_date.value);
 					<tr>
 						<td width="227" align="right" height="42">&nbsp;</td>
 						<td height="42" colspan="3">
-                        <input type="hidden" name="id" value="<?php echo $_REQUEST["id"]; ?>">
+                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($_REQUEST["id"], ENT_QUOTES, 'UTF-8'); ?>">
 						<input type="submit" value="Update" name="B1" class="command" ><span lang="en-us">&nbsp;
 						</span><input type="reset" value="Reset" name="B2" class="command"></td>
 					</tr>
@@ -380,7 +380,7 @@ if(isset($_GET["pid"]))
 {
 ?>
 <script language="javascript">
- showUser("id=<?php echo $_GET["pid"]; ?>&vid=<?php echo $_GET["vid"]; ?>");
+ showUser("id=<?php echo htmlspecialchars($_GET["pid"], ENT_QUOTES, 'UTF-8'); ?>&vid=<?php echo htmlspecialchars($_GET["vid"], ENT_QUOTES, 'UTF-8'); ?>");
 </script>
 <?php
 }
