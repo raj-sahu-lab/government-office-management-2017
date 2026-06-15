@@ -13,7 +13,7 @@ $data["issue_status"]		= $_REQUEST["issue_status"];
 $data["updated_by_id"]		= $_SESSION['UID'];
 $data["updated_date"]		= date("Y-m-d");
 $submitId = $objBaseLib->insert_query('letter_followup', $data, 'id') ;  
-$sql_progress  ="update letter_master set status  = '". $_REQUEST["issue_status"] ."' where id = " . $_REQUEST["issue_id"] ; 
+$sql_progress  ="update letter_master set status  = '". mysql_real_escape_string($_REQUEST["issue_status"]) ."' where id = " . (int)$_REQUEST["issue_id"] ;
 mysql_query($sql_progress) ; 
 header("Location:". $_SESSION["page"] ."&mode=success&qtype=sess");
 exit;

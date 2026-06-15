@@ -31,22 +31,22 @@ if(isset($_REQUEST["letter_id"]) && $_REQUEST["letter_id"] !="")
 				}
 		//// end file upload script
 		
-	    $data["person_id"]	 	= $_REQUEST["officer"];
-		$data["dept_id"] 		= $_REQUEST["department"];
-		$data["applicant_name"]	= $_REQUEST["app_name"];
-		$data["address"]		= $_REQUEST["app_address"];
-		$data["subject"]   		= $_REQUEST["subject"];
-		$data["description"]	= $_REQUEST["description"];
-		$data["teep"] 			= $_REQUEST["comment"];
-		$data["anumodan"]		= $_REQUEST["reference"];
+	    $data["person_id"]	 	= (int)$_REQUEST["officer"];
+		$data["dept_id"] 		= (int)$_REQUEST["department"];
+		$data["applicant_name"]	= mysql_real_escape_string($_REQUEST["app_name"]);
+		$data["address"]		= mysql_real_escape_string($_REQUEST["app_address"]);
+		$data["subject"]   		= mysql_real_escape_string($_REQUEST["subject"]);
+		$data["description"]	= mysql_real_escape_string($_REQUEST["description"]);
+		$data["teep"] 			= mysql_real_escape_string($_REQUEST["comment"]);
+		$data["anumodan"]		= mysql_real_escape_string($_REQUEST["reference"]);
 		//$data["status"]			= $_REQUEST["status"];
-		$data["letter_date"]   	= $_REQUEST["letter_date"];
-		$data["dispatch_date"]	= $_REQUEST["dispatch"];
+		$data["letter_date"]   	= mysql_real_escape_string($_REQUEST["letter_date"]);
+		$data["dispatch_date"]	= mysql_real_escape_string($_REQUEST["dispatch"]);
 		$data["created_id"]		= $_SESSION['UID'];
-		$data["dispatch"]		= $_REQUEST["dispatch_no"];
-		$data["letter_to"]		= $_REQUEST["letter_to"];
-		$data["category"]		= $_REQUEST["cmb_category"];
-		$data["anumodan_id"]	= $_REQUEST["anumodan_name"];
+		$data["dispatch"]		= mysql_real_escape_string($_REQUEST["dispatch_no"]);
+		$data["letter_to"]		= mysql_real_escape_string($_REQUEST["letter_to"]);
+		$data["category"]		= (int)$_REQUEST["cmb_category"];
+		$data["anumodan_id"]	= (int)$_REQUEST["anumodan_name"];
 		
 		//$issue_status	= $_REQUEST["issue_status"];
 		
@@ -68,7 +68,7 @@ if(isset($_REQUEST["letter_id"]) && $_REQUEST["letter_id"] !="")
 		$sql = $sql ." , file2='". $data["file2"] ."' " ; 
 		}	
 					
-		$sql = $sql . "	where id=". $_REQUEST["letter_id"] ."";
+		$sql = $sql . "	where id=". (int)$_REQUEST["letter_id"] ."";
 		
 		//echo $sql;  
 		$rs = mysql_query($sql);

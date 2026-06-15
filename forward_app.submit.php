@@ -12,7 +12,7 @@ if(isset($_REQUEST["app_ids"]) && $_REQUEST["app_ids"]!="")
 		
 		foreach ($arr as &$value) 
 		{
-		$sql_progress  =" insert into letter_followup (issue_id, NextFollowupDate,remarks) values('". $value ."', '". $_REQUEST["forward_date"] ."', 'Date Forwarded')";
+		$sql_progress  =" insert into letter_followup (issue_id, NextFollowupDate,remarks) values('". (int)$value ."', '". mysql_real_escape_string($_REQUEST["forward_date"]) ."', 'Date Forwarded')";
 		//echo $sql_progress . "<br>";
 		mysql_query($sql_progress) ; 
 		}		

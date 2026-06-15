@@ -449,27 +449,27 @@ alert(document.frmApplication.visit_date.value);
 					  
 						if(isset($_REQUEST['officer']) && $_REQUEST['officer']!='0')
 						{
-						$sql_ward  = $sql_ward . " and letter_master.person_id =". $_REQUEST['officer'] ;
+						$sql_ward  = $sql_ward . " and letter_master.person_id =". (int)$_REQUEST['officer'] ;
 						}
 						
 						if(isset($_REQUEST['department']) && $_REQUEST['department']!='0')
 						{
-						$sql_ward  = $sql_ward . " and letter_master.dept_id=" . $_REQUEST['department'] ;
+						$sql_ward  = $sql_ward . " and letter_master.dept_id=" . (int)$_REQUEST['department'] ;
 						}
 						
 						if(isset($_REQUEST['cat']) && $_REQUEST['cat']!='0')
 						{
-						$sql_ward  = $sql_ward . " and letter_master.category=" . $_REQUEST['cat'] ;
+						$sql_ward  = $sql_ward . " and letter_master.category=" . (int)$_REQUEST['cat'] ;
 						}
 						
 						if(isset($_REQUEST['issue_status']) && $_REQUEST['issue_status']!='0')
 						{
-						$sql_ward  = $sql_ward . " and issue_status.id=" . $_REQUEST['issue_status'] ;
+						$sql_ward  = $sql_ward . " and issue_status.id=" . (int)$_REQUEST['issue_status'] ;
 						}
 						
 						if(isset($_REQUEST['Anumodan']) && $_REQUEST['Anumodan']!='0')
 						{
-						$sql_ward  = $sql_ward . " and letter_master.anumodan_id=" . $_REQUEST['Anumodan'] ;
+						$sql_ward  = $sql_ward . " and letter_master.anumodan_id=" . (int)$_REQUEST['Anumodan'] ;
 						}
 						
 						$sql_ward  = $sql_ward . " and letter_master.install=" . $_SESSION['install'] ;

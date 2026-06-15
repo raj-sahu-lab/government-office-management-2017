@@ -5,7 +5,7 @@ if(isset($_SESSION['LoginID']) && $_SESSION['LoginID']!="")
 $pid = $_GET["pid"];;
 $vid = $_GET["vid"];;
 
-$sql=" select * from issue_master where id=" . $_GET["id"];
+$sql=" select * from issue_master where id=" . (int)$_GET["id"];
 $rs1 = mysql_query($sql);
 $row1 = mysql_fetch_row($rs1);
 
